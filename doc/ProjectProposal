@@ -25,7 +25,7 @@ The top left of the screen (on the navbar) will contain a toggle for a given cou
 
 6) Detailed low-fidelity UI mockup
 
-![alt text](https://github.com/cs411-alawini/fa23-cs411-team070-A3D/blob/main/doc/Screen%20Shot%202023-09-11%20at%2021.34.52.png?raw=true) 
+![alt text](https://github.com/cs411-alawini/fa23-cs411-team070-A3D/blob/main/doc/Screen%20Shot%202023-09-11%20at%2021.34.52.png)
 
 7) Project Work Distribution Across the Team
 We divided work on the basis of experience working on the different components of our web application i.e. Frontend, Backend, API calls, etc. Diego and Anna have experience with React and graphic designing, so they will work on designing the frontend of the website, while Alan and Aditya will set a foundation for the backend in Node.js. To make sure all of us gain experience working on each component, we would spend time working on tutorials to learn the parts we are unfamiliar with. Since we are using various different APIs in our application, each one of us would read through API documentation, and help set up the API calls. We also decided to work together on the Database queries, and the tasks we are supposed to perform on our DBMS because it would be a good learning experience working with SQL. 

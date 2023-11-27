@@ -73,6 +73,7 @@
 .container {
   position:relative;
   min-height:100vh;
+  display:grid;
   min-width: 100vw;
   overflow-x: hidden;
   max-height: 100vw;
@@ -85,7 +86,40 @@
   padding: 10px;
   margin: auto;
   margin-top: 20vh;
-  width: 50%;
+  width: 100%;
+  /* border: 3px solid green; */
+  
+}
+
+.table-card {
+
+  /* padding: 10px;
+  margin: auto;
+  margin-top: 20vh; */
+  margin-bottom: 25vh;
+  width: 80%;
+  border: 3px dotted rgb(0, 0, 0);
+  
+}
+
+.favorited-list {
+
+  /* padding: 10px;
+  margin: auto;
+  margin-top: 20vh; */
+  overflow-x:wrap;
+  row-gap: 200px;
+  width:40%;
+  /* width: 5%; */
+  /* border: 3px solid green; */
+  
+}
+.favorited-list li{
+
+  
+  margin-top: 3vh;
+  overflow-x:wrap;
+
   /* border: 3px solid green; */
   
 }
@@ -100,4 +134,26 @@
   padding-left: 10px;
   padding-right: 10px;
 
+}
+
+.dropdown-card {
+
+  /* padding: 10px;
+  margin: auto;
+  margin-top: 20vh; */
+  margin-bottom: 25vh;
+  /* overflow-y: visible; */
+  height:30vh;
+  width: 90%;
+  border: 3px dotted rgb(0, 0, 0);
+  align-items: right;
+  justify-content: right;
+  padding: 10%;
+  
+  
+}
+
+.dropdown {
+  /* display:static; */
+  
 }

@@ -76,8 +76,9 @@
   display:grid;
   min-width: 100vw;
   overflow-x: hidden;
+  padding:0;
   max-height: 100vw;
-  background-color: #f8b195;
+  background-color: whitesmoke;
   text-align: center;
   align-items: center;
 }
@@ -96,9 +97,12 @@
   /* padding: 10px;
   margin: auto;
   margin-top: 20vh; */
+  background-color: red;
+  
+  min-height: 100vh;
   margin-bottom: 25vh;
-  width: 80%;
-  border: 3px dotted rgb(0, 0, 0);
+  width: 100%;
+  border: px dotted rgb(0, 0, 0);
   
 }
 

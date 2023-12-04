@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   overflow-x: hidden;
+  
 
 }
 
@@ -40,8 +41,8 @@
 }
 
 .NavBar {
-  position:relative;
-  background-color: #333;
+  position:static;
+  background-color: #191818;
   width: 100vw;
   overflow: hidden;
 }
@@ -78,16 +79,17 @@
   overflow-x: hidden;
   padding:0;
   max-height: 100vw;
-  background-color: whitesmoke;
+  background-color: #28282B;
   text-align: center;
   align-items: center;
 }
 .main-card {
-
   padding: 10px;
   margin: auto;
-  margin-top: 20vh;
-  width: 100%;
+  height:100%;
+  /* margin-top: 20vh; */
+  min-width: 65vw;
+  background-color:whitesmoke;
   /* border: 3px solid green; */
   
 }
@@ -97,12 +99,12 @@
   /* padding: 10px;
   margin: auto;
   margin-top: 20vh; */
-  background-color: red;
-  
+  background-color: #28282B;
+  color:whitesmoke;
   min-height: 100vh;
   margin-bottom: 25vh;
-  width: 100%;
-  border: px dotted rgb(0, 0, 0);
+  width: 80%;
+  border: 0px dotted rgb(255, 255, 255);
   
 }
 
@@ -113,7 +115,7 @@
   margin-top: 20vh; */
   overflow-x:wrap;
   row-gap: 200px;
-  width:40%;
+  width:0%;
   /* width: 5%; */
   /* border: 3px solid green; */
   
@@ -140,19 +142,28 @@
 
 }
 
+
+.checkbox-list {
+  margin-top: 0vh;
+  list-style-type: none;
+  padding:0;
+  padding-right: 0vw;
+  padding-left:2.5vw
+}
+
 .dropdown-card {
 
-  /* padding: 10px;
-  margin: auto;
-  margin-top: 20vh; */
-  margin-bottom: 25vh;
+  /* padding: 10px; */
+  /* margin: auto; */
+  /* padding-right: 10; */
+  margin-bottom: 100vh;
+  /* margin-bottom: 15vh; */
   /* overflow-y: visible; */
-  height:30vh;
-  width: 90%;
-  border: 3px dotted rgb(0, 0, 0);
-  align-items: right;
-  justify-content: right;
-  padding: 10%;
+  /* height:80vh; */
+  width: 10vw;
+  /* align-items: right;
+  justify-content: right; */
+  /* padding: 10%; */
   
   
 }
@@ -160,4 +171,42 @@
 .dropdown {
   /* display:static; */
   
+}
+
+.checkbox {
+  color:white;
+  min-width: 10vw;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.region {
+  
+  /* text-align: left; */
+  /* padding-right: 5vw; */
+  padding:0;
+  margin-left:0;
+}
+
+.region h1 {
+
+  /* text-align: left; */
+  
+  padding-left: 0vw;
+  font-size: x-large;
+  margin-top:20px;
+  color: white;
+  font-weight: 500;
+}
+
+.category {
+  padding-left: 2vw;
+}
+
+.category h1 {
+  padding-right: 2vw;
+  font-size: x-large;
+  margin-top:20px;
+  color: white;
+  font-weight: 500;
 }

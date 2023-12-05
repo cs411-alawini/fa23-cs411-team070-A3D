@@ -5,8 +5,11 @@ import SearchResult from './Table';
 import {BrowserRouter} from "react-router-dom"
 import Checkboxes from './Checkboxes';
 
-export function Go(input, setData) {
+export function Go(input, setData, category, region) {
     // const [data, setData] = useState("");
+    console.log(category);
+    console.log(region);
+    console.log(input);
     var result = "";
     fetch("http://localhost:8000/search?tag=" + input)
       .then((res) => res.json())
@@ -23,11 +26,13 @@ export function Go(input, setData) {
     }
   }
   
-  
+
   function MainScreen() {
     const [data, setData] = useState("");
+    const [category, setCategory] = useState("All");
+    const [region, setRegion] = useState("USA");
 
-    const [category, setCategory] = useState("");
+
     useEffect(() => {
       fetch("http://localhost:8000/search?tag=flop")
         .then((res) => res.json())
@@ -35,7 +40,7 @@ export function Go(input, setData) {
         .then((data) => setData(data));
     }, []);
   
-  
+
   
     
     return (
@@ -63,10 +68,10 @@ export function Go(input, setData) {
           </ol>
         </div>
         <div className='main-card'>
-        <SearchBar GoFunc={(newVal) => Go(newVal,setData)}></SearchBar>
+        <SearchBar GoFunc={(newVal) => Go(newVal,setData, category, region)}></SearchBar>
   
   
-        <SearchResult></SearchResult>
+        <SearchResult results={[data]}></SearchResult>   {/*results should be array of json data from search query*/}
         <li>{data}</li>
   
         </div>
@@ -76,12 +81,13 @@ export function Go(input, setData) {
         <div className='region'>
             <h1 className='region'>Region: </h1>
 
-            <Checkboxes></Checkboxes>
-        <div className='category'>
-            <h1> Category: </h1>
-            <Drop></Drop>
+            <Checkboxes setRegion={setRegion}></Checkboxes>
+            <div className='category'>
 
-        </div>
+            <h1> Category: </h1>
+            <Drop setCategory={setCategory}></Drop>
+
+            </div>
 
         </div>
         

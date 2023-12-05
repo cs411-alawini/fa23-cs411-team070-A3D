@@ -210,3 +210,15 @@
   color: white;
   font-weight: 500;
 }
+
+.like-button {
+  border:none;
+  background-color: whitesmoke;
+  
+}
+
+.like-button:focus {
+  border:none;
+  background-color: whitesmoke;
+  
+}

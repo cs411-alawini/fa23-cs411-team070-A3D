@@ -39,7 +39,7 @@ export default function SearchResult(props) {
         return (<tr>
           <td>
           
-            <div className='d-flex align-items-center'>
+            {/* <div className='d-flex align-items-center'>
               <div onClick={() => window.open('https://www.youtube.com/watch?v=DnY5xz11lR0')} className='top-video'>
                 <img
                   src='https://img.youtube.com/vi/DnY5xz11lR0/0.jpg'
@@ -47,15 +47,15 @@ export default function SearchResult(props) {
                   
                   className='thumbnail'
                 />
-                {/* <p className='text-muted mb-0'>john.doe@gmail.com</p> */}
+                <p className='text-muted mb-0'>john.doe@gmail.com</p>
               </div>
               
-              <div className='ms-3'>
-                <p className='fw-bold mb-1'>{tag.TagName}</p>
-                
-                {/* <p className='text-muted mb-0'>john.doe@gmail.com</p> */}
+              
+            </div> */}
+            <div className='ms-3'>
+                <p className='tag-name'>{tag.TagName}</p>
+            
               </div>
-            </div>
           </td>
           <td>
             <p className='fw-normal mb-1'>{tag.Total_views}</p>

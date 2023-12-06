@@ -13,7 +13,9 @@ function TagCrud({ onTagEntered }) {
   const handleTagLike = () => {
     setLike(1);
     setDislike(0);
-    sendTagStatus(tag, like);
+    if (tag.trim() != "") {
+      sendTagStatus(tag, like);
+    }
   };
 
   const handleTagDislike = () => {

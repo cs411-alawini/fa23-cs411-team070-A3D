@@ -103,6 +103,22 @@ var region = req.query.region;
 
 });
 
+app.get("/favourites2", function(req, response) {
+  response.header('Access-Control-Allow-Origin', '*');
+  response.header('Access-Control-Allow-Headers', '*');
+  response.header('Access-Control-Request-Headers', '*');
+  if (req.method === "OPTIONS") {
+    response.header('Access-Control-Allow-Methods', '*');
+    return response.status(200).json({});
+  }
+
+  db.query("SELECT * FROM Favorite ORDER BY rating DESC LIMIT 10", (err, result) => {
+    console.log("fav table : ",  result)
+    response.json(result);
+  })
+
+});
+
 
 app.post("/favorites", function(req, response) {
   response.header('Access-Control-Allow-Origin', '*');

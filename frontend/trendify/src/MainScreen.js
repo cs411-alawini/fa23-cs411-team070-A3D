@@ -58,15 +58,27 @@ export function Go(input, setData, category, region) {
         
       // };
       // fetchData();
-      var request = "http://localhost:8000/favorites"
+      var request = "http://localhost:8000/favourites2"
 
-      // useEffect(() => {
-      //   fetch(request)
-      //   .then((res) =>
-      //       setFavorites(res)
-      //   )
-      // })
-    
+      useEffect(() => {
+        fetch(request)
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return res.json();
+          })
+          .then((res) => {
+            // Uncomment the line below to set state (assuming setFavorites is a state updater function)
+            // setFavorites(JSON.parse(JSON.stringify(res)));
+            console.log('Fetched data:', res);
+            setFavorites(res)
+          })
+          .catch((error) => {
+            console.error('Fetch error:', error);
+          });
+      }, []);
+      
   
     
   
@@ -82,7 +94,16 @@ export function Go(input, setData, category, region) {
         <div className='table-card'> 
           <h1>Most Favorited</h1>
           <ol className='favorited-list'> 
-          {/* {favorites.map((favorite) => <li> {favorite} </li>)} */}
+          {favorites ? (
+  <ol>
+    {favorites.map((favorite, index) => {
+      // console.log("Favorite:", favorite); // Add this line
+      return <li className='favorite-tag' key={index}><p>{favorite.tag_name} </p> <span>{"("+favorite.rating+")"}</span></li> ;
+    })}
+  </ol>
+) : (
+  <p>No favorites available.</p>
+)}
           
           </ol>
         </div>

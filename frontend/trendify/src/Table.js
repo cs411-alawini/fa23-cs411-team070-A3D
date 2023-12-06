@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-import React from 'react';
+import {React, location} from 'react';
 import { MDBBadge, MDBBtn, MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
 
 
@@ -14,16 +14,18 @@ function LikeButton() {
 
 
 
+
 export default function SearchResult(props) {
+
+  
   return (
     <MDBTable align='middle'>
       <MDBTableHead>
         <tr>
           <th scope='col'>Tag</th>
-          <th scope='col'>Title</th>
-          <th scope='col'>Status</th>
-          <th scope='col'>Position</th>
-          <th scope='col'>Actions</th>
+          <th scope='col'>Total Views</th>
+          <th scope='col'>Total Likes</th>
+          <th scope='col'>Total Views</th>
         </tr>
       </MDBTableHead>
       <MDBTableBody>
@@ -31,15 +33,20 @@ export default function SearchResult(props) {
           <tr>
           <td>
             <div className='d-flex align-items-center'>
-              <img
-                src='https://mdbootstrap.com/img/new/avatars/8.jpg'
-                alt=''
-                style={{ width: '45px', height: '45px' }}
-                className='rounded-circle'
-              />
+              <div onClick={() => window.open('https://www.youtube.com/watch?v=DnY5xz11lR0')} className='top-video'>
+                <img
+                  src='https://img.youtube.com/vi/DnY5xz11lR0/0.jpg'
+                  alt=''
+                  
+                  className='thumbnail'
+                />
+                {/* <p className='text-muted mb-0'>john.doe@gmail.com</p> */}
+              </div>
+              
               <div className='ms-3'>
                 <p className='fw-bold mb-1'>John Doe</p>
-                <p className='text-muted mb-0'>john.doe@gmail.com</p>
+                
+                {/* <p className='text-muted mb-0'>john.doe@gmail.com</p> */}
               </div>
             </div>
           </td>
@@ -65,6 +72,8 @@ export default function SearchResult(props) {
         <tr>
           <td>
             <div className='d-flex align-items-center'>
+              <a href="TagRating">
+              </a>
               <img
                 src='https://mdbootstrap.com/img/new/avatars/8.jpg'
                 alt=''

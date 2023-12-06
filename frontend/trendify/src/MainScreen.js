@@ -48,11 +48,7 @@ export function Go(input, setData, category, region) {
       
       <>
       <div className='App'> 
-      <div className='NavBar'>
-        <a href="Trendify">Trendify</a>
-        <a href="TagRating">Ratings</a>
-
-      </div>
+      
       
       
       

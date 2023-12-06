@@ -1,7 +1,10 @@
 .App {
+  position:relative;
   text-align: center;
   overflow-x: hidden;
-  
+  /* display:flex; */
+  /* width:100%;
+  height:100%; */
 
 }
 
@@ -41,9 +44,11 @@
 }
 
 .NavBar {
-  position:static;
+  position: relative;
+  
+  
   background-color: #191818;
-  width: 100vw;
+  max-width: 100vw;
   overflow: hidden;
 }
 
@@ -78,7 +83,9 @@
   min-width: 100vw;
   overflow-x: hidden;
   padding:0;
-  max-height: 100vw;
+  margin:0;
+
+  max-height: 100%;
   background-color: #28282B;
   text-align: center;
   align-items: center;
@@ -221,4 +228,33 @@
   border:none;
   background-color: whitesmoke;
   
+}
+
+.thumbnail {
+  /* margin-right: 300px; */
+  width: 45px;
+  height: 45px;
+  border-radius:4px;
+}
+
+.top-video {
+  margin-right: 70px;
+  max-height: 50px;
+  min-height: 50px;
+  min-width: 50px;
+  max-width: 50px;
+
+}
+
+
+
+.thumbnail:hover {
+  width:50px;
+  height: 50px;
+  cursor: pointer;
+
+  aspect-ratio: auto;
+  /* width:50px; */
+  transition: all linear 0.1s;
+
 }

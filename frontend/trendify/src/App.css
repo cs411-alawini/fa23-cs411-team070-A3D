@@ -91,12 +91,17 @@
   align-items: center;
 }
 .main-card {
-  padding: 10px;
-  margin: auto;
+  /* padding: 10px; */
+  margin-bottom: 30vh;
   height:100%;
+  padding:1%;
+  overflow-y: scroll;
   /* margin-top: 20vh; */
   min-width: 65vw;
+  max-height: 100vh;
   background-color:whitesmoke;
+  border-radius: 7px;
+  
   /* border: 3px solid green; */
   
 }
@@ -109,10 +114,18 @@
   background-color: #28282B;
   color:whitesmoke;
   min-height: 100vh;
-  margin-bottom: 25vh;
+  margin-bottom: 35vh;
   width: 80%;
   border: 0px dotted rgb(255, 255, 255);
   
+}
+.table-card h1{
+
+  padding-left: 0vw;
+  font-size: x-large;
+  margin-top:20px;
+  color: white;
+  font-weight: 500;
 }
 
 .favorited-list {
@@ -256,5 +269,14 @@
   aspect-ratio: auto;
   /* width:50px; */
   transition: all linear 0.1s;
+
+}
+
+.TagCrud {
+  min-height: 100vh;
+  padding-top: 20vw;
+  background-color: #28282B;
+  color: white;
+
 
 }

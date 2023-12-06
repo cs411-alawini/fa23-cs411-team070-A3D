@@ -3,6 +3,8 @@ import './App.css';
 
 import {React, location} from 'react';
 import { MDBBadge, MDBBtn, MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
+import { MDBSpinner } from 'mdb-react-ui-kit';
+
 
 
 
@@ -16,22 +18,24 @@ function LikeButton() {
 
 
 export default function SearchResult(props) {
-
   
   return (
+
     <MDBTable align='middle'>
-      <MDBTableHead>
+      <MDBTableHead style={{position: "sticky" }}>
         <tr>
           <th scope='col'>Tag</th>
           <th scope='col'>Total Views</th>
           <th scope='col'>Total Likes</th>
-          <th scope='col'>Total Views</th>
+          <th scope='col'>Total Videos</th>
+          <th scope='col'>Grade</th>
         </tr>
       </MDBTableHead>
       <MDBTableBody>
-        {props.results.map((tag) => 
-          <tr>
+        {props.results.length > 0 ? props.results.map((tag) => {
+        return (<tr>
           <td>
+          
             <div className='d-flex align-items-center'>
               <div onClick={() => window.open('https://www.youtube.com/watch?v=DnY5xz11lR0')} className='top-video'>
                 <img
@@ -44,32 +48,39 @@ export default function SearchResult(props) {
               </div>
               
               <div className='ms-3'>
-                <p className='fw-bold mb-1'>John Doe</p>
+                <p className='fw-bold mb-1'>{tag.TagName}</p>
                 
                 {/* <p className='text-muted mb-0'>john.doe@gmail.com</p> */}
               </div>
             </div>
           </td>
           <td>
-            <p className='fw-normal mb-1'>Software engineer</p>
-            <p className='text-muted mb-0'>IT department</p>
+            <p className='fw-normal mb-1'>{tag.Total_views}</p>
+            <p className='text-muted mb-0'>In thousands</p>
           </td>
           <td>
             <MDBBadge color='success' pill>
-              Active
+              {tag.Total_likes}
             </MDBBadge>
           </td>
-          <td>Senior</td>
+          <td>{tag.Total_videos}</td>
           <td>
-          <MDBBtn color='link' rounded size='sm'>
-              Edit
+          <MDBBtn color='green' rounded size='sm'>
+              {tag.Rating}
             </MDBBtn>
             
           </td>
         </tr>
         
-        )}
-        <tr>
+        )} 
+)  :  (props.loading ? 
+  
+  <MDBSpinner role='status'>
+    <span className='visually-hidden'></span>
+  </MDBSpinner> : ""
+  
+)}
+        {/* <tr>
           <td>
             <div className='d-flex align-items-center'>
               <a href="TagRating">
@@ -163,7 +174,7 @@ export default function SearchResult(props) {
               Edit
             </MDBBtn>
           </td>
-        </tr>
+        </tr> */}
       </MDBTableBody>
     </MDBTable>
   );

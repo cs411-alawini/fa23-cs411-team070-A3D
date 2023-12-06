@@ -1,74 +1,97 @@
 import SearchBar from './SearchBar';
 import Drop from './DropdownMenu';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useQuery } from 'react';
 import SearchResult from './Table';
 import {BrowserRouter} from "react-router-dom"
 import Checkboxes from './Checkboxes';
+import axios from 'axios';
 
 export function Go(input, setData, category, region) {
-    // const [data, setData] = useState("");
     console.log(category);
+    if (category == -1) {
+      category = 0;
+    }
     console.log(region);
     console.log(input);
-    var result = "";
-    fetch("http://localhost:8000/search?tag=" + input)
-      .then((res) => res.json())
-      .then(function(res) {
-        // props.data = res;
-        setData(res);
-        result = res
-      });
-      // .then(setData(res))
+    var request = "http://localhost:8000/search/?tag=" + input + "&category=" + category + "&region=" + region;
+   
     
-    //implement
-    if (input == "hello") {
-      console.log("hi here")
-    }
+    // console.log(request);
+    fetch(request)
+      .then((res) => res.json())
+      .then((res) => {
+        // props.data = res;
+        console.log(JSON.parse(JSON.stringify(res)))
+        setData(JSON.parse(JSON.stringify(res)));
+        // result = res
+      }).catch((e) => console.log(e))
+
+
+
+    //   var result = "";
+    // fetch("http://localhost:8000/search?tag=" + input)
+    //   .then((res) => res.json())
+    //   .then(function(res) {
+    //     // props.data = res;
+    //     setData(res);
+    //     result = res
+    //   });
+    
+    
+   
   }
   
 
   function MainScreen() {
-    const [data, setData] = useState("");
-    const [category, setCategory] = useState("All");
-    const [region, setRegion] = useState("USA");
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false)
+    const [category, setCategory] = useState("0");
+    const [region, setRegion] = useState("US");
+    const [favorites, setFavorites] = useState([])
 
 
-    useEffect(() => {
-      fetch("http://localhost:8000/search?tag=flop")
-        .then((res) => res.json())
-        // .then(setData(res))
-        .then((data) => setData(data));
-    }, []);
+    
+          // setLoading(false);
+        // } catch (error) {
+          // setError('Error fetching data. Please try again.');
+          // setLoading(false);
+        
+      // };
+      // fetchData();
+      var request = "http://localhost:8000/favorites"
+
+      // useEffect(() => {
+      //   fetch(request)
+      //   .then((res) =>
+      //       setFavorites(res)
+      //   )
+      // })
+    
   
-
+    
   
     
     return (
   
       
       <>
-      <div className='App'> 
       
-      
-      
+      {/* {data} */}
       
       <div className='container' style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: 10 }}>
         <div className='table-card'> 
-          <h3>Most Favorited</h3>
+          <h1>Most Favorited</h1>
           <ol className='favorited-list'> 
-          
-          <li>here</li>     {/*get this asynchronously with useeffect, fetch, axios */}
-          <li>lol</li> 
-          <li>{data}</li>
+          {/* {favorites.map((favorite) => <li> {favorite} </li>)} */}
           
           </ol>
         </div>
         <div className='main-card'>
-        <SearchBar GoFunc={(newVal) => Go(newVal,setData, category, region)}></SearchBar>
+        <SearchBar GoFunc={(newVal) => {setLoading(true); Go(newVal, setData,category, region)}}></SearchBar>
   
   
-        <SearchResult results={[data]}></SearchResult>   {/*results should be array of json data from search query*/}
-        <li>{data}</li>
+        <SearchResult results={data} loading={loading}></SearchResult>   {/*results should be array of json data from search query*/}
+        
   
         </div>
         
@@ -95,7 +118,6 @@ export function Go(input, setData, category, region) {
         
         </div>
         
-      </div>
       </>
     );
     

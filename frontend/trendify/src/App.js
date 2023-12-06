@@ -5,6 +5,7 @@ import MainScreen from './MainScreen';
 import { BrowserRouter ,Route, Routes} from 'react-router-dom';
 import TagRating from './TagRating';
 import Navbar from './Navbar';
+import TagCrudPage from './TagInputPage';
 
 
 
@@ -22,7 +23,7 @@ function App() {
       
         <Routes>
           <Route path="/" element={ <MainScreen/> } />
-          <Route path="/TagRating" element={ <TagRating/> } />
+          <Route path="/TagUpdate" element={ <TagCrudPage/> } />
         </Routes>
       </BrowserRouter>
       

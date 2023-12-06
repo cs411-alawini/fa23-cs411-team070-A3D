@@ -20,19 +20,19 @@ export default function Checkboxes(props) {
       <li>
 
       <div class="form-check">
-        <input  class="form-check-input" value="USA" onChange={handleChange} type="radio" name="flexRadioDefault" id="flexRadioDefault1" defaultChecked/>   {/*default value*/}
+        <input  class="form-check-input" value="US" onChange={handleChange} type="radio" name="flexRadioDefault" id="flexRadioDefault1" defaultChecked/>   {/*default value*/}
         <label class="checkbox" for="flexRadioDefault1" > United States </label>
       </div>
       </li>
       <li>
       <div class="form-check">
-        <input class="form-check-input" value="BRA"  onChange={handleChange} type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+        <input class="form-check-input" value="BR"  onChange={handleChange} type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
         <label class="checkbox" for="flexRadioDefault1"> Brazil </label>
       </div>
       </li>
       <li>
       <div class="form-check">
-        <input class="form-check-input" value="IND" onChange={handleChange} type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+        <input class="form-check-input" value="IN" onChange={handleChange} type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
         <label class="checkbox" for="flexRadioDefault1"> India </label>
       </div>
       </li>
